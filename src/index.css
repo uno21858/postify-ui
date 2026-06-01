@@ -1,6 +1,24 @@
 @import "tailwindcss";
 
-body. html, root {
+@theme {
+    --color-deep: #0B1E27;
+    --color-slate: #102A38;
+    --color-steel: #2A4F55;
+    --color-teal: #00B8AA;
+    --color-teal-bright: #00d4c2;
+    --color-mist: #7F979B;
+    --color-lime: #28C76F;
+    --color-coral: #EA5455;
+    --color-amber: #FFA043;
+    --color-sky: #00CFE8;
+    --color-gold: #F3DB75;
+    --color-grape: #5E2682;
+    --color-grape-bright: #7a32a8;
+    --color-plum: #372C44;
+}
+
+body, html, #root {
     margin: 0;
     height: 100%;
+    background-color: var(--color-deep);
 }

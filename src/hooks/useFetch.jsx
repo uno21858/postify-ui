@@ -5,10 +5,15 @@ const useFetch = (url) => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
 
+    const [tick, setTick] = useState(0);
+
     useEffect(() => {
+        if (!url) return;
+
         const getData = async () => {
             try {
                 setLoading(true);
+                setError(null);
 
                 const res = await fetch(url);
 
@@ -26,9 +31,9 @@ const useFetch = (url) => {
         };
 
         getData();
-    }, [url]);
+    }, [url, tick]);
 
-    return { loading, data, error };
+    return { loading, data, error, refetch: () => setTick(t => t + 1) };
 };
 
 export default useFetch;
